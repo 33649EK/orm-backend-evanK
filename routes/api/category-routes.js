@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
 
     if (categories.length === 0) {
       res.status(404).json({ message: "No categories found!" });
+      return;
     }
 
     res.status(200).json(categories);
@@ -37,6 +38,7 @@ router.get("/:id", async (req, res) => {
 
     if (!category) {
       res.status(404).json({ message: "No category found with this id!" });
+      return;
     }
 
     res.status(200).json(category);
@@ -84,6 +86,7 @@ router.delete("/:id", async (req, res) => {
 
     if (!category) {
       res.status(404).json({ message: "Category not found!" });
+      return;
     }
 
     res.status(200).json(category);
